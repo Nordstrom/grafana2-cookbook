@@ -119,7 +119,7 @@ and Virtualbox, which must be installed for the tests to execute.
 These are only available for cookbooks that target Unix-like systems.
 Support for Windows targets is expected by the end of 2014.
 
-By default, these tests run against a Nordstrom RedHat 6.4 image, but
+By default, these tests run against Centos 6.6 and Ubuntu 12.04 images, but
 this can be changed in the file .kitchen.yml.
 
 After converging in a virtual machine, ServerSpec tests are executed.
