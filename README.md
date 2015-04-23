@@ -1,6 +1,9 @@
 # grafana2
 
 ## Description
+Right now, this is only tested on CentOS in AWS. We used RDS/MySQL for
+data and sessions. Will add options for other setups soon.
+
 Manually create a MySQL RDS instance and update attributes/default.rb
 Manually create the sessions table in mysql:
 yum install mysql
@@ -16,6 +19,8 @@ CREATE TABLE `session` (
 ...
 
 ## Usage
+
+You must change the attributes for domain and database host, user, password.
 
 Add 'recipe[grafana2::default]' to your node's run-list.
 
@@ -36,7 +41,7 @@ will have to change this to '~> 1.0' as appropriate.)
 
 ### default
 
-The default recipe ...
+The default recipe will call install, config, and service definitions.
 
 ## Attributes
 
@@ -45,7 +50,8 @@ The attributes defined by this recipe are organized under the
 
 Attribute | Description | Type   | Default
 ----------|-------------|--------|--------
-...       | ...         | String | ...
+domain    | Used in setting root URL | String | 
+db_host | IP or hostname for database | String |
 
 ## LWRP
 
