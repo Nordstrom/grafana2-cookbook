@@ -5,12 +5,14 @@ Manually create a MySQL RDS instance and update attributes/default.rb
 Manually create the sessions table in mysql:
 yum install mysql
 
+```
 CREATE TABLE `session` (
     `key`       CHAR(16) NOT NULL,
     `data`      BLOB,
     `expiry`    INT(11) UNSIGNED NOT NULL,
     PRIMARY KEY (`key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+```
 ...
 
 ## Usage
@@ -169,6 +171,7 @@ directory (.e.g lib/berksfile/myoverride.berks)
 Put each local snippet in a file with an extension of .guard in the lib/guardfile
 directory (.e.g lib/guardfile/myoverride.berks)
 
+```
   guard :rake, task: :coverage do
     watch(%r{^spec/foo/.+_spec\.rb$})
     watch(%r{^spec/spec_helper\.rb$})
@@ -179,6 +182,7 @@ directory (.e.g lib/guardfile/myoverride.berks)
     watch(%r{^recipes/.+\.rb$})
     watch(%r{^metadata\.rb$})
   end
+```
 
 ## Author
 
