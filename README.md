@@ -1,8 +1,13 @@
 # grafana2
 
+
 ## Description
-Right now, this is only tested on CentOS in AWS. We used RDS/MySQL for
-data and sessions. Will add options for other setups soon.
+http://grafana.org
+
+Brand new cookbook for the new Grafana 2.0 release. See:
+http://grafana.org/blog/2015/04/20/Grafana-2-Released.html
+
+We used RDS/MySQL for data and sessions. Will add options for other setups soon.
 
 Manually create a MySQL RDS instance and update attributes/default.rb
 Manually create the sessions table in mysql:

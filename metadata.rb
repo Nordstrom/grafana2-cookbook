@@ -9,7 +9,7 @@ maintainer       'Nordstrom, Inc.'
 maintainer_email 'techinfraperfmet@nordstrom.com'
 license          'All rights reserved'
 description      'Installs/Configures grafana2'
-version          '0.1.4'
+version          '0.1.5'
 
 depends          'yum'
 depends          'apt'
