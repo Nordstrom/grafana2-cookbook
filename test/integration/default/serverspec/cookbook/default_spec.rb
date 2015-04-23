@@ -14,3 +14,13 @@ require 'spec_helper'
 describe command('whoami') do
   its(:stdout) { should eq "root\n" }
 end
+
+describe 'Grafana Daemon' do
+  it 'is listening on port 3000' do
+    expect(port(3000)).to be_listening
+  end
+
+  it 'has a running service of grafana-server' do
+    expect(service('grafana-server')).to be_running
+  end
+end
