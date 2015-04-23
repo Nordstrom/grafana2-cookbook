@@ -8,6 +8,12 @@ when 'debian'
   package_options = '--force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew"'
 
   include_recipe 'apt'
+  apt_repository 'grafana' do
+    repo = node['grafana']['use_unstable_repo'] ? 'grafana/testing' : 'grafana/stable'
+    uri "#{node['grafana']['repo_url']}/#{repo}/debian wheezy main"
+    key "#{node['grafana']['repo_url']}/gpg.key"
+    action :add
+  end
 else
   rhel_version_equivalent =
     case platform_family
@@ -31,7 +37,7 @@ else
   repo = yum_repository 'grafana' do
     description 'grafana'
     repo = node['grafana']['use_unstable_repo'] ? 'grafana/testing' : 'grafana/stable'
-    url "#{node['grafana']['yum_repo_url']}/#{repo}/el/#{rhel_version_equivalent}/$basearch/"
+    url "#{node['grafana']['repo_url']}/#{repo}/el/#{rhel_version_equivalent}/$basearch/"
     action :add
   end
   repo.gpgcheck(false) if repo.respond_to?(:gpgcheck)
@@ -40,8 +46,9 @@ end
 case platform_family
 when 'debian'
   package 'grafana' do
-    version node['grafana'].version
+    version node['grafana']['version']
     options package_options
+    action :upgrade
   end
 else
   yum_package 'grafana' do

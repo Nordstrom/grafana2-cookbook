@@ -49,7 +49,7 @@ domain = <%= node['grafana']['domain'] %>
 [database]
 # Either "mysql", "postgres" or "sqlite3", it's your choice
 type = <%= node['grafana']['db_type'] %>
-host = <%= node['grafana']['db_host'] %>:<%= node['grafana']['db_port'] %>
+host = <%= node['grafana']['db_host'] %>
 name = <%= node['grafana']['db_name'] %>
 user = <%= node['grafana']['db_user'] %>
 password = <%= node['grafana']['db_password'] %>
@@ -125,10 +125,10 @@ provider_config = <%= node['grafana']['db_user'] %>:<%= node['grafana']['db_pass
 #################################### Anonymous Auth ##########################
 [auth.anonymous]
 # enable anonymous access
-enabled = true
+enabled = <%= node['grafana']['anon_enabled'] %>
 
 # specify organization name that should be used for unauthenticated users
-org_name = Nordstrom Inc
+org_name = <%= node['grafana']['org_name'] %>
 
 # specify role for unauthenticated users
 ;org_role = Viewer

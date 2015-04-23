@@ -3,7 +3,7 @@
 # Copyright (c) 2015 Nordstrom, Inc.
 #
 
-# TODO split install into package vs file based on attributes
+# TODO: split install into package vs file based on attributes
 include_recipe 'grafana2::install'
 
 include_recipe 'grafana2::service'
