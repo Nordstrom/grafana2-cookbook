@@ -7,7 +7,7 @@
 name             'grafana2'
 maintainer       'Nordstrom, Inc.'
 maintainer_email 'techinfraperfmet@nordstrom.com'
-license          'All rights reserved'
+license          'Apache 2.0'
 description      'Installs/Configures grafana2'
 version          '0.1.5'
 
