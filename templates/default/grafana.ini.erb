@@ -49,7 +49,7 @@ domain = <%= node['grafana']['domain'] %>
 [database]
 # Either "mysql", "postgres" or "sqlite3", it's your choice
 type = <%= node['grafana']['db_type'] %>
-host = <%= node['grafana']['db_host'] %>
+host = <%= node['grafana']['db_host'] %>:<%= node['grafana']['db_port'] %>
 name = <%= node['grafana']['db_name'] %>
 user = <%= node['grafana']['db_user'] %>
 password = <%= node['grafana']['db_password'] %>
