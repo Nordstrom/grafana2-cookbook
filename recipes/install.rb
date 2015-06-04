@@ -58,3 +58,11 @@ else
     action :upgrade
   end
 end
+
+# Update after pkg install until this PR is added into a release
+# https://github.com/grafana/grafana/pull/2115
+cookbook_file '/etc/init.d/grafana-server' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+end

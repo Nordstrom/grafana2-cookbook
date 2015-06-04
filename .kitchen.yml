@@ -39,3 +39,6 @@ suites:
   - name: default
     run_list:
       - recipe[grafana2::default]
+    attributes:
+      grafana:
+        domain: localhost
