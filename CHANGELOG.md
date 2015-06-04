@@ -1,5 +1,9 @@
 # Revision History for grafana2
 
+## 0.1.8
+- Nathan Haneysmith <nathan.haneysmtih@nordstrom.com>
+- Fix for init scripts from grafana master
+
 ## 0.1.7
 - Rick Crelia <rick.crelia@nordstrom.com>
 - Fix for grafana.ini template
