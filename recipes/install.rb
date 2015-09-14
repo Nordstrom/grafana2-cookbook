@@ -10,7 +10,9 @@ when 'debian'
   include_recipe 'apt'
   apt_repository 'grafana' do
     repo = node['grafana']['use_unstable_repo'] ? 'grafana/testing' : 'grafana/stable'
-    uri "#{node['grafana']['repo_url']}/#{repo}/debian wheezy main"
+    uri "#{node['grafana']['repo_url']}/#{repo}/debian"
+    distribution "wheezy"
+    components ["main"]
     key "#{node['grafana']['repo_url']}/gpg.key"
     action :add
   end
