@@ -1,5 +1,13 @@
 # Revision History for grafana2
 
+## 0.1.9
+- Jon Cowie <jonlives@gmail.com>
+- Fix for debian repo
+
+- Nathan Haneysmith <nathan.haneysmtih@nordstrom.com>
+- Remove init script workaround
+- Style fixes for Rubocop
+
 ## 0.1.8
 - Nathan Haneysmith <nathan.haneysmtih@nordstrom.com>
 - Fix for init scripts from grafana master

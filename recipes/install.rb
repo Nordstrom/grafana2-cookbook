@@ -8,10 +8,13 @@ when 'debian'
   package_options = '--force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew"'
 
   include_recipe 'apt'
+  package 'apt-transport-https'
+
   apt_repository 'grafana' do
     repo = node['grafana']['use_unstable_repo'] ? 'grafana/testing' : 'grafana/stable'
     uri "#{node['grafana']['repo_url']}/#{repo}/debian"
-    components ['wheezy', 'main']
+    # components ['wheezy', 'main']
+    components %w(wheezy main)
     key "#{node['grafana']['repo_url']}/gpg.key"
     action :add
   end
@@ -58,12 +61,4 @@ else
     allow_downgrade true
     action :upgrade
   end
-end
-
-# Update after pkg install until this PR is added into a release
-# https://github.com/grafana/grafana/pull/2115
-cookbook_file '/etc/init.d/grafana-server' do
-  owner 'root'
-  group 'root'
-  mode '0755'
 end
