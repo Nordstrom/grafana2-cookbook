@@ -9,7 +9,7 @@ maintainer       'Nordstrom, Inc.'
 maintainer_email 'techinfraperfmet@nordstrom.com'
 license          'Apache 2.0'
 description      'Installs/Configures grafana2'
-version          '0.1.8'
+version          '0.1.9'
 issues_url       'https://github.com/Nordstrom/grafana2-cookbook/issues'
 source_url       'https://github.com/Nordstrom/grafana2-cookbook'
 

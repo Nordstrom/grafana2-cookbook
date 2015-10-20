@@ -4,8 +4,8 @@ DEPENDENCIES
     metadata: true
 
 GRAPH
-  apt (2.7.0)
-  grafana2 (0.1.8)
+  apt (2.8.2)
+  grafana2 (0.1.9)
     apt (>= 0.0.0)
     yum (>= 0.0.0)
   yum (3.6.0)
