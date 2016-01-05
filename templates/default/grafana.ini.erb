@@ -196,3 +196,8 @@ level = <%= node['grafana']['log_level'] %>
 ;enabled = false
 ;rabbitmq_url = amqp://localhost/
 ;exchange = grafana_events
+
+# ldap configuration
+[auth.ldap]
+enabled = <%= node['grafana']['ldap_enabled'] %>
+config_file = <%= node['grafana']['ldap_config_file'] %> # add the customized config file in the cookbook wrapper

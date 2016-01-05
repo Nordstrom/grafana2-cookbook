@@ -48,3 +48,17 @@ default['grafana']['session_type'] = 'memory' # Either 'memory', 'file', 'mysql'
 
 ### LOGGING ###
 default['grafana']['log_level'] = 'Info' # Either "Trace", "Debug", "Info", "Warn", "Error", "Critical"
+
+### LDAP ###
+# If you enable LDAP, you MUST override the sample resource template
+# in your wrapper cookbook 'my-grafana2' with custom template 'my-ldap.toml.erb'
+# Insert this code after grafana2 cookbook inclusion:
+# begin
+#    r = resources(:template => "#{node['grafana']['ldap_config_file']}")
+#    r.cookbook "my-grafana2"
+#    r.source "my-ldap.toml.erb"
+#    rescue Chef::Exceptions::ResourceNotFound
+#    Chef::Log.warn "could not find template to override!"
+# end
+default['grafana']['ldap_enabled'] = 'false' # 'true' or 'false
+default['grafana']['ldap_config_file'] = '/etc/grafana/ldap.toml'
