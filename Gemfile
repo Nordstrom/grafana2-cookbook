@@ -18,7 +18,7 @@ group :test do
   # does a >= pin; we add a ~> pin for now to keep us
   # on the 0.4.x release
   gem 'log_switch', '~> 0.4'
-  gem 'tailor', '~> 1.4'
+  gem 'tailor', '~> 1.4', '>= 1.4.0'
   # use our forked version until
   # https://github.com/berkshelf/berkshelf/pull/1393 has been accepted
   gem 'berkshelf', '~> 3.2',
