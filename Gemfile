@@ -21,7 +21,7 @@ group :test do
   gem 'tailor', '~> 1.4'
   # use our forked version until
   # https://github.com/berkshelf/berkshelf/pull/1393 has been accepted
-  gem 'berkshelf', '~> 3.2',
+  gem 'berkshelf', '~> 3.2', '>= 3.2.3'
     git: 'https://github.com/Nordstrom/berkshelf.git',
     branch: 'use_httpclient_instead_of_nethttp'
   # use our forked version until
