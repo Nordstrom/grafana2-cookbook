@@ -9,7 +9,7 @@ group :development do
 end
 
 group :test do
-  gem 'foodcritic', '~> 4.0'
+  gem 'foodcritic', '~> 4.0', '>= 4.0.0'
   gem 'chefspec', '~> 4.1'
   gem 'ci_reporter_rspec', '~> 1.0'
   gem 'test-kitchen', '~> 1.2'
@@ -18,7 +18,7 @@ group :test do
   # does a >= pin; we add a ~> pin for now to keep us
   # on the 0.4.x release
   gem 'log_switch', '~> 0.4'
-  gem 'tailor', '~> 1.4'
+  gem 'tailor', '~> 1.4', '>= 1.4.0'
   # use our forked version until
   # https://github.com/berkshelf/berkshelf/pull/1393 has been accepted
   gem 'berkshelf', '~> 3.2',
@@ -33,7 +33,7 @@ group :test do
   gem 'guard', '~> 2.8.2'
   # pin to 4.3 series until guard-foodcritic has been updated for v2 API
   gem 'guard-rspec', '~> 4.3.1'
-  gem 'guard-foodcritic', '~> 1.0'
+  gem 'guard-foodcritic', '~> 1.0', '>= 1.0.3'
   gem 'guard-rake', '~> 0.0'
   gem 'rubocop', '~> 0.28.0'
   gem 'guard-rubocop', '~> 1.1'
